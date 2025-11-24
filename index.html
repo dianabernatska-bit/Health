@@ -8,161 +8,173 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --font-family-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --color-primary: #4593FF;
+            --color-primary-hover: #4a9eff;
+            --color-bg-light: #F8FBFF;
+            --color-text-dark: #1f2937;
+            --color-text-gray: #4b5563;
+            --color-text-footer: #3B4053;
+        }
+    </style>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
+<body class="font-sans text-text-dark leading-relaxed bg-white">
+    <header class="bg-primary py-4 px-4 sticky top-0 z-[100] shadow-md">
+        <div class="mx-auto px-5 max-w-7xl">
+            <div class="flex items-center justify-between gap-8">
+                <div class="flex items-center gap-2 text-white text-xl font-semibold">
                     <img src="images/logo-white.svg" alt="HealthSpecialist Logo" class="logo-image"/>
                 </div>
-                <nav class="main-nav">
-                    <ul class="nav-list">
-                        <li><a href="#home">HOME</a></li>
-                        <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#services">SERVICES</a></li>
-                        <li><a href="#doctors">DOCTORS</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
+                <nav class="flex-1 flex justify-center main-nav">
+                    <ul class="flex list-none gap-8 nav-list">
+                        <li><a href="index.html" class="text-white no-underline font-light text-[13px] tracking-wider uppercase transition-opacity hover:opacity-80">HOME</a></li>
+                        <li><a href="about.html" class="text-white no-underline font-light text-[13px] tracking-wider uppercase transition-opacity hover:opacity-80">ABOUT</a></li>
+                        <li><a href="#services" class="text-white no-underline font-light text-[13px] tracking-wider uppercase transition-opacity hover:opacity-80">SERVICES</a></li>
+                        <li><a href="#doctors" class="text-white no-underline font-light text-[13px] tracking-wider uppercase transition-opacity hover:opacity-80">DOCTORS</a></li>
+                        <li><a href="#contact" class="text-white no-underline font-light text-[13px] tracking-wider uppercase transition-opacity hover:opacity-80">CONTACT</a></li>
                     </ul>
                 </nav>
-                <div class="header-actions">
-                    <button class="btn btn-login">LOG IN</button>
-                    <button class="btn btn-sign-up">SIGN UP</button>
+                <div class="flex gap-4 items-center header-actions">
+                    <button class="px-5 py-2.5 border-none rounded-md text-[15px] font-bold cursor-pointer transition-all uppercase tracking-wider font-sans bg-transparent text-white hover:opacity-80">LOG IN</button>
+                    <button class="px-5 py-2.5 border-none rounded-md text-[15px] font-bold cursor-pointer transition-all uppercase tracking-wider font-sans bg-white text-primary hover:opacity-80">SIGN UP</button>
                 </div>
-                <button class="burger-menu" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button class="flex md:hidden flex-col justify-around w-[30px] h-[30px] bg-transparent border-none cursor-pointer p-0 z-[101] relative burger-menu" aria-label="Toggle menu">
+                    <span class="w-full h-[3px] bg-white rounded-[3px] transition-all duration-300 origin-center relative"></span>
+                    <span class="w-full h-[3px] bg-white rounded-[3px] transition-all duration-300 origin-center relative"></span>
+                    <span class="w-full h-[3px] bg-white rounded-[3px] transition-all duration-300 origin-center relative"></span>
                 </button>
             </div>
         </div>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Dedicated Health Care Specialists</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <button class="btn btn-primary btn-large">LEARN MORE</button>
+        <section id="home" class="pt-8 pl-4 pr-4 lg:pt-16 lg:pl-16 bg-white hero">
+            <div class="mx-auto px-5 max-w-7xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center hero-content">
+                    <div class="hero-text order-2 lg:order-1">
+                        <h1 class="text-2xl md:text-4xl font-bold text-text-dark mb-6 leading-tight">Dedicated Health Care Specialists</h1>
+                        <p class="text-text-gray mb-4 text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        <p class="text-text-gray mb-4 text-base">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <button class="px-8 py-3.5 border-none rounded-md text-base font-medium cursor-pointer transition-all uppercase tracking-wider font-sans bg-primary text-white hover:bg-primary-hover hover:-translate-y-px mt-6">LEARN MORE</button>
                     </div>
-                    <div class="hero-illustration">
-                        <img src="images/hero-illustration.png" alt="Medical illustration with ambulance and medical supplies" class="hero-image">
+                    <div class="flex justify-center items-center hero-illustration order-1 lg:order-2">
+                        <img src="images/hero-illustration.png" alt="Medical illustration with ambulance and medical supplies" class="max-w-full h-auto block">
                     </div>
                 </div>
             </div>
         </section>
-        <section class="info-cards">
-            <div class="container">
-                <div class="cards-grid">
-                    <article class="info-card">
-                        <h2>EMERGENCIES</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                        <button class="btn btn-primary  btn-card">MORE INFO</button>
+        <section class="pt-8 lg:pt-16 bg-white info-cards">
+            <div class="mx-auto px-5 max-w-7xl">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 cards-grid">
+                    <article class="bg-bg-light p-4 md:p-8 rounded-[10px] flex flex-col items-center gap-6 info-card">
+                        <h2 class="text-xl font-bold text-text-dark uppercase tracking-wider">EMERGENCIES</h2>
+                        <p class="text-text-gray leading-relaxed flex-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                        <button class="px-5 py-2.5 border-none rounded-md text-sm font-medium cursor-pointer transition-all uppercase tracking-wider font-sans bg-primary text-white hover:bg-primary-hover hover:-translate-y-px w-fit mt-auto">MORE INFO</button>
                     </article>
-                    <article class="info-card">
-                        <h2>OPERATING HOURS</h2>
-                        <div class="hours-list">
-                            <div class="hours-item">
+                    <article class="bg-bg-light p-4 md:p-8 rounded-[10px] flex flex-col items-center gap-6 info-card">
+                        <h2 class="text-xl font-bold text-text-dark uppercase tracking-wider">OPERATING HOURS</h2>
+                        <div class="flex flex-col w-full gap-6">
+                            <div class="flex justify-between text-text-gray text-[0.9375rem]">
                                 <span>MONDAY - FRIDAY</span>
                                 <span>08.00 - 18.00</span>
                             </div>
-                            <hr class="hours-divider"/>
-                            <div class="hours-item">
+                            <hr class="border-none border-t border-black"/>
+                            <div class="flex justify-between text-text-gray text-[0.9375rem]">
                                 <span>SATURDAY</span>
                                 <span>10.00 - 16.00</span>
                             </div>
-                            <div class="hours-item">
+                            <div class="flex justify-between text-text-gray text-[0.9375rem]">
                                 <span>SUNDAY</span>
                                 <span>10.00 - 14.00</span>
                             </div>
                         </div>
-                        <button class="btn btn-primary btn-card">MAKE AN APPOINTMENT</button>
+                        <button class="px-5 py-2.5 border-none rounded-md text-sm font-medium cursor-pointer transition-all uppercase tracking-wider font-sans bg-primary text-white hover:bg-primary-hover hover:-translate-y-px w-fit mt-auto">MAKE AN APPOINTMENT</button>
                     </article>
-                    <article class="info-card">
-                        <h2>TEST RESULTS</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                        <button class="btn btn-primary  btn-card">CHECK TEST</button>
+                    <article class="bg-bg-light p-4 md:p-8 rounded-[10px] flex flex-col items-center gap-6 info-card">
+                        <h2 class="text-xl font-bold text-text-dark uppercase tracking-wider">TEST RESULTS</h2>
+                        <p class="text-text-gray leading-relaxed flex-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                        <button class="px-5 py-2.5 border-none rounded-md text-sm font-medium cursor-pointer transition-all uppercase tracking-wider font-sans bg-primary text-white hover:bg-primary-hover hover:-translate-y-px w-fit mt-auto">CHECK TEST</button>
                     </article>
                 </div>
             </div>
         </section>
-        <section id="doctors" class="doctors">
-            <div class="container">
-                <h2 class="section-title">Doctors</h2>
-                <div class="doctors-grid">
-                    <article class="doctor-card">
-                        <div class="doctor-avatar">
-                            <img src="images/doctor-phillis-vance.png" alt="Dr. Phillis K Vance" class="doctor-photo">
+        <section id="doctors" class="py-4 md:py-8 bg-white doctors">
+            <div class="mx-auto px-5 max-w-7xl">
+                <h2 class="text-2xl lg:text-3xl font-bold text-text-dark ml-4 lg:ml-16 mb-8 section-title">Doctors</h2>
+                <div class="flex gap-8 overflow-x-auto overflow-y-hidden scroll-smooth [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden doctors-grid">
+                    <article class="bg-bg-light p-4 md:p-8 rounded-[10px] flex gap-6 items-center flex-[0_0_calc(85%-1rem)] md:flex-[0_0_calc(50%-1rem)] lg:flex-[0_0_calc(33.333%-1.33rem)] min-w-[300px] doctor-card">
+                        <div class="flex-shrink-0">
+                            <img src="images/doctor-phillis-vance.png" alt="Dr. Phillis K Vance" class="w-20 h-20 rounded-full object-cover block">
                         </div>
-                        <div class="doctor-info">
-                            <h3>Phillis K Vance MD</h3>
-                            <span class="specialty-badge">Family Medicine</span>
-                        </div>
-                    </article>
-                    <article class="doctor-card">
-                        <div class="doctor-avatar">
-                            <img src="images/doctor-stanley-hudson.png" alt="Dr. Stanley K Hudson" class="doctor-photo"/>
-                        </div>
-                        <div class="doctor-info">
-                            <h3>Stanley K Hudson MD</h3>
-                            <span class="specialty-badge">Internal Medicine</span>
+                        <div class="flex flex-col gap-3">
+                            <h3 class="text-lg font-normal text-text-footer">Phillis K Vance MD</h3>
+                            <span class="inline-block px-3.5 py-1.5 bg-text-dark text-white rounded-md text-sm font-light w-fit ml-4">Family Medicine</span>
                         </div>
                     </article>
-                    <article class="doctor-card">
-                        <div class="doctor-avatar">
-                            <img src="images/doctor-kevin-malone.png" alt="Dr. Kevin D Malone" class="doctor-photo"/>
+                    <article class="bg-bg-light p-4 md:p-8 rounded-[10px] flex gap-6 items-center flex-[0_0_calc(85%-1rem)] md:flex-[0_0_calc(50%-1rem)] lg:flex-[0_0_calc(33.333%-1.33rem)] min-w-[300px] doctor-card">
+                        <div class="flex-shrink-0">
+                            <img src="images/doctor-stanley-hudson.png" alt="Dr. Stanley K Hudson" class="w-20 h-20 rounded-full object-cover block"/>
                         </div>
-                        <div class="doctor-info">
-                            <h3>Kevin D Malone MD</h3>
-                            <span class="specialty-badge">Cardiology</span>
+                        <div class="flex flex-col gap-3">
+                            <h3 class="text-lg font-normal text-text-footer">Stanley K Hudson MD</h3>
+                            <span class="inline-block px-3.5 py-1.5 bg-text-dark text-white rounded-md text-sm font-light w-fit ml-4">Internal Medicine</span>
                         </div>
                     </article>
-                    <article class="doctor-card">
-                        <div class="doctor-avatar">
-                            <img src="images/doctor-angela-martins.png" alt="Dr. Angela S Martin MD" class="doctor-photo"/>
+                    <article class="bg-bg-light p-4 md:p-8 rounded-[10px] flex gap-6 items-center flex-[0_0_calc(85%-1rem)] md:flex-[0_0_calc(50%-1rem)] lg:flex-[0_0_calc(33.333%-1.33rem)] min-w-[300px] doctor-card">
+                        <div class="flex-shrink-0">
+                            <img src="images/doctor-kevin-malone.png" alt="Dr. Kevin D Malone" class="w-20 h-20 rounded-full object-cover block"/>
                         </div>
-                        <div class="doctor-info">
-                            <h3>Angela S Martin MD</h3>
-                            <span class="specialty-badge">Physical Therapy</span>
+                        <div class="flex flex-col gap-3">
+                            <h3 class="text-lg font-normal text-text-footer">Kevin D Malone MD</h3>
+                            <span class="inline-block px-3.5 py-1.5 bg-text-dark text-white rounded-md text-sm font-light w-fit ml-4">Cardiology</span>
+                        </div>
+                    </article>
+                    <article class="bg-bg-light p-4 md:p-8 rounded-[10px] flex gap-6 items-center flex-[0_0_calc(85%-1rem)] md:flex-[0_0_calc(50%-1rem)] lg:flex-[0_0_calc(33.333%-1.33rem)] min-w-[300px] doctor-card">
+                        <div class="flex-shrink-0">
+                            <img src="images/doctor-angela-martins.png" alt="Dr. Angela S Martin MD" class="w-20 h-20 rounded-full object-cover block"/>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <h3 class="text-lg font-normal text-text-footer">Angela S Martin MD</h3>
+                            <span class="inline-block px-3.5 py-1.5 bg-text-dark text-white rounded-md text-sm font-light w-fit ml-4">Physical Therapy</span>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
+    <footer class="bg-bg-light py-6 md:py-12 px-4 text-text-footer footer">
+        <div class="mx-auto px-5 max-w-7xl">
+            <div class="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-32 footer-content">
+                <div class="flex items-center gap-2 text-xl font-semibold">
                     <img src="images/logo-blue.svg" alt="HealthSpecialist Logo" class="logo-image"/>
                 </div>
-                <div class="footer-links">
+                <div class="flex flex-col lg:flex-row gap-8 lg:gap-32 flex-1 justify-start footer-links">
                     <div class="footer-column">
-                        <h3>SERVICES</h3>
-                        <ul>
-                            <li><a href="#services">Family Medicine</a></li>
-                            <li><a href="#services">Internal Medicine</a></li>
-                            <li><a href="#services">Cardiology</a></li>
+                        <h3 class="text-[13px] font-semibold mb-4 uppercase tracking-wider">SERVICES</h3>
+                        <ul class="list-none flex flex-col gap-2">
+                            <li><a href="#services" class="text-text-footer no-underline text-[10px] transition-opacity hover:opacity-80">Family Medicine</a></li>
+                            <li><a href="#services" class="text-text-footer no-underline text-[10px] transition-opacity hover:opacity-80">Internal Medicine</a></li>
+                            <li><a href="#services" class="text-text-footer no-underline text-[10px] transition-opacity hover:opacity-80">Cardiology</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h3>DOCTORS</h3>
-                        <ul>
-                            <li><a href="#doctors">Phillis K Vance MD</a></li>
-                            <li><a href="#doctors">Stanley K Hudson MD</a></li>
-                            <li><a href="#doctors">Kevin D Malone MD</a></li>
-                            <li><a href="#doctors">Angela S Martin MD</a></li>
+                        <h3 class="text-[13px] font-semibold mb-4 uppercase tracking-wider">DOCTORS</h3>
+                        <ul class="list-none flex flex-col gap-2">
+                            <li><a href="#doctors" class="text-text-footer no-underline text-[10px] transition-opacity hover:opacity-80">Phillis K Vance MD</a></li>
+                            <li><a href="#doctors" class="text-text-footer no-underline text-[10px] transition-opacity hover:opacity-80">Stanley K Hudson MD</a></li>
+                            <li><a href="#doctors" class="text-text-footer no-underline text-[10px] transition-opacity hover:opacity-80">Kevin D Malone MD</a></li>
+                            <li><a href="#doctors" class="text-text-footer no-underline text-[10px] transition-opacity hover:opacity-80">Angela S Martin MD</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h3>CONTACT</h3>
-                        <a href="tel:4041234567" class="contact-button">
+                        <h3 class="text-[13px] font-semibold mb-4 uppercase tracking-wider">CONTACT</h3>
+                        <a href="tel:4041234567" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-md no-underline text-[0.9375rem] transition-colors hover:bg-primary-hover">
                             <img alt="Phone icon" src="images/phone-icon.png"/>
-                            <span class="phone-number">(404)123 - 4567</span>
+                            <span class="text-[15px] font-bold text-white">(404)123 - 4567</span>
                         </a>
                     </div>
                 </div>
